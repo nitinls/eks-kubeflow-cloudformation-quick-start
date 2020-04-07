@@ -63,8 +63,8 @@ echo $windows_pub_ip
 aws ec2 authorize-security-group-ingress --group-id ${SG_ALB} --protocol tcp --port 80 --cidr ${windows_pub_ip}/32
 aws ec2 revoke-security-group-ingress --group-id ${SG_ALB} --protocol tcp --port 80 --cidr 0.0.0.0/0
 
-#Assigning Sagemaker and S3 Access policies to Node Instance Roles for EKS Cluster for calls coming from Jupyter Nodebooks.
+#Assigning Sagemaker and S3 Access policies to Node Instance Roles for EKS Cluster for calls coming from Jupyter Notebooks.
 
-export NODE_IAM_ROLE_ARN=$(eksctl get iamidentitymapping --cluster ${AWS_CLUSTER_NAME} | grep  arn | awk  '{print $1}')
-aws iam attach-role-policy --role-name ${NODE_IAM_ROLE_ARN} --policy-arn arn:aws:iam::aws:policy/AmazonSageMakerFullAccess
-aws iam attach-role-policy --role-name ${NODE_IAM_ROLE_ARN} --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
+#export NODE_IAM_ROLE_ARN=$(eksctl get iamidentitymapping --cluster ${AWS_CLUSTER_NAME} | grep  arn | awk  '{print $1}')
+#aws iam attach-role-policy --role-name ${NODE_IAM_ROLE_ARN} --policy-arn arn:aws:iam::aws:policy/AmazonSageMakerFullAccess
+#aws iam attach-role-policy --role-name ${NODE_IAM_ROLE_ARN} --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
