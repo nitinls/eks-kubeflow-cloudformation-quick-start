@@ -75,4 +75,4 @@ aws ec2 authorize-security-group-ingress --group-id ${windows_SG} --protocol tcp
 
 export EKSWORKSHOP_SUBNET=$(aws ec2 describe-subnets --filter "Name=tag:kubernetes.io/role/elb, Values=1" | jq '.Subnets[0].SubnetId' | tr -d '"')
 
-aws ec2 run-instances --image-id ami-07f3715a1f6dbb6d9 --count 1 --instance-type t2.large --key-name ${AWS_CLUSTER_NAME} --security-group-ids ${windows_SG} --subnet-id ${EKSWORKSHOP_SUBNET} --associate-public-ip-address
+aws ec2 run-instances --image-id ami-07f3715a1f6dbb6d9 --count 1 --instance-type t2.large --key-name ${AWS_CLUSTER_NAME} --security-group-ids ${windows_SG} --subnet-id ${EKSWORKSHOP_SUBNET} --associate-public-ip-address --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=WindowsServer}]'
