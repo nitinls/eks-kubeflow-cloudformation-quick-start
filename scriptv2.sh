@@ -51,6 +51,8 @@ eksctl utils write-kubeconfig --cluster ${AWS_CLUSTER_NAME}
 cd ${KF_DIR} && kfctl apply -V -f ${CONFIG_FILE}
 kubectl -n kubeflow get all
 
+sleep 60
+
 export SG_ALB=$(aws elbv2 describe-load-balancers | jq '.LoadBalancers[0].SecurityGroups[0]' | tr -d '"')
 export windows_SG=$(aws ec2 describe-security-groups --filters Name=group-name,Values=*windowsSg-${AWS_CLUSTER_NAME}* | jq '.SecurityGroups[0].GroupId' | tr -d '"')
 #export SG_WINDOWS=$(aws ec2 describe-instances --filters "Name=tag-value,Values=Jumpbox" | jq '.Reservations[0].Instances[0].SecurityGroups[0].GroupId' | tr -d '"')
