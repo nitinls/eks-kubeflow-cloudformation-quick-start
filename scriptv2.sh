@@ -1,7 +1,7 @@
 #!/bin/bash
 #Install KubeFlow on EKS
 
-export AWS_CLUSTER_NAME=eksworkshop-eksctlv10
+export AWS_CLUSTER_NAME=eksworkshop-eksctlv12
 export AWS_REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r '.region')
 
 
@@ -18,7 +18,7 @@ curl --silent --location "https://github.com/kubeflow/kfctl/releases/download/v1
 sudo cp -v /tmp/kfctl /usr/local/bin
 
 cat << EoF > kf-install.sh
-export AWS_CLUSTER_NAME=eksworkshop-eksctlv10
+export AWS_CLUSTER_NAME=eksworkshop-eksctlv12
 export KF_NAME=\${AWS_CLUSTER_NAME}
 
 export BASE_DIR=/home/ec2-user/environment
@@ -65,6 +65,6 @@ aws ec2 revoke-security-group-ingress --group-id ${SG_ALB} --protocol tcp --port
 
 #Assigning Sagemaker and S3 Access policies to Node Instance Roles for EKS Cluster for calls coming from Jupyter Notebooks.
 
-#export NODE_IAM_ROLE_ARN=$(eksctl get iamidentitymapping --cluster ${AWS_CLUSTER_NAME} | grep  arn | awk  '{print $1}')
-#aws iam attach-role-policy --role-name ${NODE_IAM_ROLE_ARN} --policy-arn arn:aws:iam::aws:policy/AmazonSageMakerFullAccess
-#aws iam attach-role-policy --role-name ${NODE_IAM_ROLE_ARN} --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
+export NODE_IAM_ROLE_NAME=$(eksctl get iamidentitymapping --cluster ${AWS_CLUSTER_NAME} | grep  arn | awk  '{print $1}' | egrep -o eks.*)
+aws iam attach-role-policy --role-name ${NODE_IAM_ROLE_NAME} --policy-arn arn:aws:iam::aws:policy/AmazonSageMakerFullAccess
+aws iam attach-role-policy --role-name ${NODE_IAM_ROLE_NAME} --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess

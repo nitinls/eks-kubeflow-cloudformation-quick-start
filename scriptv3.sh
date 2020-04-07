@@ -7,7 +7,7 @@ sudo pip3 install --upgrade awscli
 sudo pip3 install --upgrade numpy
 source ~/.bashrc
 
-export AWS_CLUSTER_NAME=eksworkshop-eksctlv10
+export AWS_CLUSTER_NAME=eksworkshop-eksctlv12
 export AWS_REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r '.region')
 export AWS_ACCOUNT=$(aws sts get-caller-identity --output text --query Account)
 eksctl utils associate-iam-oidc-provider --cluster ${AWS_CLUSTER_NAME} --region ${AWS_REGION} --approve

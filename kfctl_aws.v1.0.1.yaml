@@ -2,7 +2,7 @@ apiVersion: kfdef.apps.kubeflow.org/v1
 kind: KfDef
 metadata:
   creationTimestamp: null
-  name: eksworkshop-eksctlv10
+  name: eksworkshop-eksctlv12
   namespace: kubeflow
 spec:
   applications:
@@ -330,7 +330,7 @@ spec:
       - application
       parameters:
       - name: clusterName
-        value: eksworkshop-eksctlv10
+        value: eksworkshop-eksctlv12
       repoRef:
         name: manifests
         path: aws/aws-alb-ingress-controller
@@ -361,6 +361,5 @@ spec:
   version: v1.0.1
 status:
   reposCache:
-  - localPath: '"/home/ec2-user/environment/eksworkshop-eksctlv10/.cache/manifests/manifests-1.0.1"'
+  - localPath: '"/home/ec2-user/environment/eksworkshop-eksctlv12/.cache/manifests/manifests-1.0.1"'
     name: manifests
-    

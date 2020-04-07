@@ -6,7 +6,7 @@ sudo yum -y install jq gettext bash-completion
 
 export AWS_REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r '.region')
 
-export AWS_CLUSTER_NAME=eksworkshop-eksctlv10
+export AWS_CLUSTER_NAME=eksworkshop-eksctlv12
 
 aws configure set default.region ${AWS_REGION}
 #aws configure set aws_output json
