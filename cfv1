@@ -80,7 +80,7 @@
              "#!/bin/bash -xe\n",
              "yum install -y aws-cfn-bootstrap git\n",
              "cd /home/ec2-user && git clone https://github.com/kalawat1985/eks-kubeflow-cloudformation-quick-startv1.git\n",
-             "cd /home/ec2-user/eks-kubeflow-cloudformation-quick-start\n",
+             "cd /home/ec2-user/eks-kubeflow-cloudformation-quick-startv1\n",
              "./scriptv1.sh\n",
              "./scriptv2.sh\n",
              "./scriptv3.sh\n"
