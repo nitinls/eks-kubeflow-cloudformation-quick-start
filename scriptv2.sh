@@ -15,7 +15,7 @@ export NODEGROUP_NAME=$(eksctl get nodegroups --cluster ${AWS_CLUSTER_NAME} -o j
 eksctl scale nodegroup --cluster ${AWS_CLUSTER_NAME} --name $NODEGROUP_NAME --nodes 6
 
 curl --silent --location "https://github.com/kubeflow/kfctl/releases/download/v1.0.1/kfctl_v1.0.1-0-gf3edb9b_linux.tar.gz" | tar xz -C /tmp
-sudo mv -v /tmp/kfctl /usr/local/bin
+sudo cp -v /tmp/kfctl /usr/local/bin
 
 cat << EoF > kf-install.sh
 export AWS_CLUSTER_NAME=eksworkshop-eksctlv10
@@ -25,7 +25,8 @@ export BASE_DIR=/home/ec2-user/environment
 export KF_DIR=\${BASE_DIR}/\${KF_NAME}
 
 # export CONFIG_URI="https://raw.githubusercontent.com/kubeflow/manifests/v1.0-branch/kfdef/kfctl_aws_cognito.v1.0.1.yaml"
-export CONFIG_URI="https://raw.githubusercontent.com/kubeflow/manifests/v1.0-branch/kfdef/kfctl_aws.v1.0.1.yaml"
+# export CONFIG_URI="https://raw.githubusercontent.com/kubeflow/manifests/v1.0-branch/kfdef/kfctl_aws.v1.0.1.yaml"
+export CONFIG_URI="https://raw.githubusercontent.com/kalawat1985/eks-kubeflow-cloudformation-quick-startv1/master/kfctl_aws.v1.0.1.yaml"
 
 export CONFIG_FILE=\${KF_DIR}/kfctl_aws.yaml
 EoF
@@ -35,10 +36,10 @@ source kf-install.sh
 mkdir -p ${KF_DIR}
 cd ${KF_DIR} && wget -O kfctl_aws.yaml $CONFIG_URI
 
-sed -i '/region: us-west-2/ a \      enablePodIamPolicy: true' ${CONFIG_FILE}
+#sed -i '/region: us-west-2/ a \      enablePodIamPolicy: true' ${CONFIG_FILE}
 
-sed -i -e 's/kubeflow-aws/'"$AWS_CLUSTER_NAME"'/' ${CONFIG_FILE}
-sed -i "s@us-west-2@$AWS_REGION@" ${CONFIG_FILE}
+#sed -i -e 's/kubeflow-aws/'"$AWS_CLUSTER_NAME"'/' ${CONFIG_FILE}
+#sed -i "s@us-west-2@$AWS_REGION@" ${CONFIG_FILE}
 
 sed -i "s@roles:@#roles:@" ${CONFIG_FILE}
 sed -i "s@- eksctl-${AWS_CLUSTER_NAME}-nodegroup-ng-a2-NodeInstanceRole-xxxxxxx@#- eksctl-${AWS_CLUSTER_NAME}-nodegroup-ng-a2-NodeInstanceRole-xxxxxxx@" ${CONFIG_FILE}
