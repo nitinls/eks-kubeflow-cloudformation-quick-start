@@ -51,12 +51,13 @@ eksctl utils write-kubeconfig --cluster ${AWS_CLUSTER_NAME}
 cd ${KF_DIR} && kfctl apply -V -f ${CONFIG_FILE}
 kubectl -n kubeflow get all
 
-#sleep 180
+sleep 120
 
 export SG_ALB=$(aws elbv2 describe-load-balancers | jq '.LoadBalancers[0].SecurityGroups[0]' | tr -d '"')
+echo $SG_ALB
 export windows_SG=$(aws ec2 describe-security-groups --filters Name=group-name,Values=*windowsSg-${AWS_CLUSTER_NAME}* | jq '.SecurityGroups[0].GroupId' | tr -d '"')
-
+echo $windows_SG
 export windows_pub_ip=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=WindowsServer" | jq '.Reservations[0].Instances[0].PublicIpAddress' | tr -d '"')
-
+echo $windows_pub_ip
 aws ec2 authorize-security-group-ingress --group-id ${SG_ALB} --protocol tcp --port 80 --cidr ${windows_pub_ip}/32
 aws ec2 revoke-security-group-ingress --group-id ${SG_ALB} --protocol tcp --port 80 --cidr 0.0.0.0/0
