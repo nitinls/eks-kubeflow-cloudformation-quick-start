@@ -71,3 +71,18 @@ echo 'export PATH=$PATH:~/sagemaker-k8s-bin' >> ~/.bashrc
 source ~/.bashrc
 
 kubectl smlogs
+
+export assume_role_policy_document='{
+  "Version": "2012-10-17",
+  "Statement": [{
+    "Effect": "Allow",
+    "Principal": {
+      "Service": "sagemaker.amazonaws.com"
+    },
+    "Action": "sts:AssumeRole"
+  }]
+}'
+
+aws iam create-role --role-name sm-k8-role-${AWS_CLUSTER_NAME} --assume-role-policy-document file://<(echo "$assume_role_policy_document")
+aws iam attach-role-policy --role-name sm-k8-role-${AWS_CLUSTER_NAME} --policy-arn arn:aws:iam::aws:policy/AmazonSageMakerFullAccess
+aws iam attach-role-policy --role-name sm-k8-role-${AWS_CLUSTER_NAME} --policy-arn arn:aws:iam::aws:policy/AdministratorAccess
