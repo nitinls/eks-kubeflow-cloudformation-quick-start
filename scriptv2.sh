@@ -55,9 +55,6 @@ kubectl -n kubeflow get all
 
 export SG_ALB=$(aws elbv2 describe-load-balancers | jq '.LoadBalancers[0].SecurityGroups[0]' | tr -d '"')
 export windows_SG=$(aws ec2 describe-security-groups --filters Name=group-name,Values=*windowsSg-${AWS_CLUSTER_NAME}* | jq '.SecurityGroups[0].GroupId' | tr -d '"')
-#export SG_WINDOWS=$(aws ec2 describe-instances --filters "Name=tag-value,Values=Jumpbox" | jq '.Reservations[0].Instances[0].SecurityGroups[0].GroupId' | tr -d '"')
-#export windows_SG=$(aws ec2 create-security-group --group-name windowsSg-${AWS_CLUSTER_NAME} --description "Windows Jump Server security group" --vpc-id ${EKSWORKSHOP_VPC} | jq '.GroupId' | tr -d '"')
-#aws ec2 run-instances --image-id ami-07f3715a1f6dbb6d9 --count 1 --instance-type t2.large --key-name Amit --security-group-ids sg-03ecce0af6f5ab7fa --subnet-id subnet-0130b3e1c3b757cff --associate-public-ip-address --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=WindowsServer1}]' | jq '.Instances[0].PrivateIpAddresses' | tr -d '"'
 
 export windows_pub_ip=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=WindowsServer" | jq '.Reservations[0].Instances[0].PublicIpAddress' | tr -d '"')
 
