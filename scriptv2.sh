@@ -52,6 +52,7 @@ cd ${KF_DIR} && kfctl apply -V -f ${CONFIG_FILE}
 kubectl -n kubeflow get all
 
 export SG_ALB=$(aws elbv2 describe-load-balancers | jq '.LoadBalancers[0].SecurityGroups[0]' | tr -d '"')
+export windows_SG=$(aws ec2 describe-security-groups --filters Name=group-name,Values=*windowsSg-${AWS_CLUSTER_NAME}* | jq '.SecurityGroups[0].GroupId' | tr -d '"')
 #export SG_WINDOWS=$(aws ec2 describe-instances --filters "Name=tag-value,Values=Jumpbox" | jq '.Reservations[0].Instances[0].SecurityGroups[0].GroupId' | tr -d '"')
 #export windows_SG=$(aws ec2 create-security-group --group-name windowsSg-${AWS_CLUSTER_NAME} --description "Windows Jump Server security group" --vpc-id ${EKSWORKSHOP_VPC} | jq '.GroupId' | tr -d '"')
 
