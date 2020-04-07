@@ -1,4 +1,5 @@
-# eks-kubeflow-cloudformation-quick-start
+# eks-kubeflow-cloudformation-quick-startv1 -
+# Work in Progress - Building a Windows Bastion Host which can be used to access Anonymous KubeFlow Dashboard (in case you are using Non-Cognito kfctl YAML).
 
 Currently runs only in Ohio. CF will be modified to support more regions in near future. 
 The scripts used in this repo are referenced from https://eksworkshop.com and https://sagemaker.readthedocs.io/en/stable/amazon_sagemaker_operators_for_kubernetes.html
