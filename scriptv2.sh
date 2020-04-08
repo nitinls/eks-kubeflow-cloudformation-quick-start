@@ -1,7 +1,7 @@
 #!/bin/bash
 #Install KubeFlow on EKS
 
-export AWS_CLUSTER_NAME=eksworkshop-eksctlv10
+export AWS_CLUSTER_NAME=eksworkshop-eksctlv20
 export AWS_REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r '.region')
 
 
@@ -18,7 +18,7 @@ curl --silent --location "https://github.com/kubeflow/kfctl/releases/download/v1
 sudo cp -v /tmp/kfctl /usr/local/bin
 
 cat << EoF > kf-install.sh
-export AWS_CLUSTER_NAME=eksworkshop-eksctlv10
+export AWS_CLUSTER_NAME=eksworkshop-eksctlv20
 export KF_NAME=\${AWS_CLUSTER_NAME}
 
 export BASE_DIR=/home/ec2-user/environment
