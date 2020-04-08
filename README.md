@@ -4,8 +4,7 @@ Steps#
 
 1) Create a new Key-pair in AWS Console. 
 2) Execute the Cloudformation template cfv1 (we will need the key-pair from the first step).
-3) The cfv1 will run for about 30 minutes and will setup a Linux Jump Box/Bastion Host VM with eksctl and kubectl , setup EKS, KubeFlow and Sagemaker operators for k8s. A Windows Jump Box will also be provisioned in the EKS subnet which is whitelisted to access the KubeFlow Dashboard with anonymous auth.
-
+3) The cfv1 will run for about 30 minutes and will setup a Linux Jump Box/Bastion Host VM with eksctl and kubectl , setup EKS, KubeFlow and Sagemaker operators for k8s. 
 
 
 
