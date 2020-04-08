@@ -65,14 +65,3 @@ EOF
 
 eksctl create cluster -f ${AWS_CLUSTER_NAME}.yaml
 eksctl utils write-kubeconfig --cluster ${AWS_CLUSTER_NAME}
-
-# Create Windows Jump Box for accessing KubeFlow Dashboard and assign relevant security group for RDP
-#export EKSWORKSHOP_VPC=$(eksctl get cluster ${AWS_CLUSTER_NAME} | grep vpc | awk  '{print $5}')
-
-#export windows_SG=$(aws ec2 create-security-group --group-name windowsSg-${AWS_CLUSTER_NAME} --description "Windows Jump Server security group" --vpc-id ${EKSWORKSHOP_VPC} | jq '.GroupId' | tr -d '"')
-
-#aws ec2 authorize-security-group-ingress --group-id ${windows_SG} --protocol tcp --port 3389 --cidr 0.0.0.0/0
-
-#export EKSWORKSHOP_SUBNET=$(aws ec2 describe-subnets --filter "Name=tag:kubernetes.io/role/elb, Values=1" | jq '.Subnets[0].SubnetId' | tr -d '"')
-
-#aws ec2 run-instances --image-id ami-07f3715a1f6dbb6d9 --count 1 --instance-type t2.large --key-name ${AWS_CLUSTER_NAME} --security-group-ids ${windows_SG} --subnet-id ${EKSWORKSHOP_SUBNET} --associate-public-ip-address --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=WindowsServer}]'
