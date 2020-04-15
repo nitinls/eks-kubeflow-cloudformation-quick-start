@@ -1,4 +1,4 @@
-# eks-kubeflow-cloudformation-quick-startv1 -
+# eks-kubeflow-cloudformation-quick-start -
 
 Steps#
 
