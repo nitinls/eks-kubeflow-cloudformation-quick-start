@@ -83,7 +83,8 @@
              "cd /home/ec2-user/eks-kubeflow-cloudformation-quick-startv1\n",
              "./scriptv1.sh\n",
              "./scriptv2.sh\n",
-             "./scriptv3.sh\n"
+             "./scriptv3.sh\n",
+             "./scriptv4.sh\n"
         ]]}}
       },
       "CreationPolicy" : {
