@@ -10,10 +10,12 @@ For people who wish to start using KubeFlow and Sagemaker operators for Kubernet
 
 2) Execute the Cloudformation template cfv1 (we will need the key-pair from the first step).
 
-3) The cfv1 will run for about 30 minutes and will setup a Linux Jump Box with eksctl and kubectl, setup EKS, KubeFlow and Sagemaker operators for k8s. 
+3) The cfv1 will run for about 30 minutes and will setup 
+        - a Linux Jump Box with eksctl and kubectl
+        - setup EKS, KubeFlow and Sagemaker operators for k8s. 
+        - install Cloud9 components
 
-4) and lastly, the script will setup Cloud9.
-
+4) Connect to the Linux Jump Box from Cloud9 for accessing Kubeflow dashboard.
 
 # Draft Deletion/Roll-Back steps-
 
