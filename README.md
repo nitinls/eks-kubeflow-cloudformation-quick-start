@@ -15,9 +15,7 @@ For people who wish to start using KubeFlow and Sagemaker operators for Kubernet
         b) setup EKS, KubeFlow and Sagemaker operators for k8s. 
         c) install Cloud9 components
         
-You can watch the installation process by logging into the Linux Jump Server and watching the log file at /var/log/cloud-init-output.log. 
-
-Ignore any messages at the end which say that scripts failed to execute.
+You can watch the installation process by logging into the Linux Jump Server and watching the log file at /var/log/cloud-init-output.log. (Ignore any messages at the end which say that scripts failed to execute)
 
 4) Connect to the Linux Jump Box from Cloud9 for accessing Kubeflow dashboard.
 
