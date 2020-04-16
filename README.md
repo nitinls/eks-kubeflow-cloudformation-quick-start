@@ -2,7 +2,7 @@
 
 # Why?
 
-For people who wish to start using KubeFlow and Sagemaker operators for Kubernetes without spending any time on installation of underlying infrastructure and tools can use the CloudFormation and follow steps mentioned below. 
+For people who wish to start using KubeFlow and Sagemaker operators for Kubernetes without spending any time on installation of underlying infrastructure and tools can use the CloudFormation in this git repo and follow the steps mentioned below in documentation. 
 
 # Steps#
 
