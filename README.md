@@ -19,7 +19,7 @@ For people who wish to start using KubeFlow and Sagemaker operators for Kubernet
 
 # Draft Deletion/Roll-Back steps-
 
-1) eksctl delete cluster (eksworkshop-eksctlv10)
+1) eksctl delete cluster
 2) Delete IAM OIDC
 3) Delete IAM Role (eksworkshopv10)
 4) Delete ALB 
