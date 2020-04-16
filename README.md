@@ -21,7 +21,7 @@ Ignore any messages at the end which say that scripts failed to execute.
 
 4) Connect to the Linux Jump Box from Cloud9 for accessing Kubeflow dashboard.
 
-# Draft Deletion/Roll-Back steps-
+# Deletion/Roll-Back steps-
 
 1) eksctl delete cluster
 2) Delete IAM OIDC
