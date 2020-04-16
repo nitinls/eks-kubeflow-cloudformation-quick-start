@@ -2,20 +2,18 @@
 # Setup Cloud9 on our Jump Server
 
 #Intall Node.Js
-wget https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh /home/ec2-user/install.sh
-
-export NVM_DIR=/usr/local/bin
-
-bash /home/ec2-user/install.sh
-
-mv /usr/bin/nvm.sh /usr/bin/nvm
-
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+source ~/.nvm/nvm.sh
 source ~/.bashrc
-
 nvm install node
 
-#Install Dev Tools
+#Install Node.JS for ec2-user
+/bin/su -c "curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash" - ec2-user
+/bin/su -c "source ~/.nvm/nvm.sh" - ec2-user
+/bin/su -c "source ~/.bashrc" - ec2-user
+/bin/su -c "nvm install node" - ec2-user
 
+#Install Dev Tools
 sudo yum -y groupinstall "Development Tools"
 
 # Install Cloud9
