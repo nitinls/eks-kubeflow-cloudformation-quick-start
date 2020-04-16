@@ -1,9 +1,8 @@
 # eks-kubeflow-cloudformation-quick-start -
 
-Why?
+# Why?
 
-The CF and scripts in this git repo can be used to stand up an EKS cluster which is also running KubeFlow and Sagemaker operators for Kubernetes. For people who wish to start using KubeFlow and Sagemaker operator without spending any time on installation of underlying infrastructure and tools can benefit from this repo.
-
+For people who wish to start using KubeFlow and Sagemaker operators for Kubernetes without spending any time on installation of underlying infrastructure and tools can use the CloudFormation and follow steps mentioned below. 
 
 # Steps#
 
