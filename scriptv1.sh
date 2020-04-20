@@ -2,7 +2,7 @@
 # Install EKS
 # Create Cloud9 workspace with relevant IAM role, remove any local references to credentials.
 
-sudo yum -y install jq gettext bash-completion
+sudo yum -y install jq gettext bash-completion ec2-instance-connect
 
 export AWS_REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r '.region')
 
