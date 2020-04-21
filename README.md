@@ -6,18 +6,16 @@ For people who wish to start using KubeFlow and Sagemaker operators for Kubernet
 
 # Steps#
 
-1) Create a new Key-pair in AWS Console. 
+1) Execute the Cloudformation template cfv1 (we will need the key-pair from the first step).
 
-2) Execute the Cloudformation template cfv1 (we will need the key-pair from the first step).
-
-3) The cfv1 will run for about 30 minutes and will setup 
+2) The cfv1 will run for about 30 minutes and will setup 
         a) a Linux Jump Box with eksctl and kubectl
         b) setup EKS, KubeFlow and Sagemaker operators for k8s. 
         c) install Cloud9 components
         
-You can watch the installation process by logging into the Linux Jump Server and watching the log file at /var/log/cloud-init-output.log. (Ignore any messages at the end which say that scripts failed to execute)
+You can watch the installation process by logging into the Linux Jump Server (using EC2 instance connect) and watching the log file at /var/log/cloud-init-output.log. (Ignore any messages at the end which say that scripts failed to execute)
 
-4) Connect to the Linux Jump Box from Cloud9 for accessing Kubeflow dashboard.
+3) Connect to the Linux Jump Box from Cloud9 for accessing Kubeflow dashboard.
 
 # Deletion/Roll-Back steps-
 
