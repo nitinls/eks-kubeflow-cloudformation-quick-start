@@ -3,9 +3,6 @@
 
   "Description" : "AWS CloudFormation Sample Template for Installing EKS, KubeFlow and Sagemaker Operators",
 
-  "Parameters" : {
-  },
-
   "Mappings" : {
     "AWSInstanceType2Arch" : {
       "t2.micro"    : { "Arch" : "HVM64"  },
@@ -42,7 +39,7 @@
       "Type": "AWS::EC2::Instance",
       "Properties": {
         "ImageId" : { "Fn::FindInMap" : [ "AWSRegionArch2AMI", { "Ref" : "AWS::Region" },
-                          { "Fn::FindInMap" : [ "AWSInstanceType2Arch", { "Ref" : "InstanceType" }, "Arch" ] } ] },
+                          { "Fn::FindInMap" : [ "AWSInstanceType2Arch", "t2.large", "Arch" ] } ] },
         "InstanceType"   : "t2.large",
         "IamInstanceProfile" : {"Ref" : "RootInstanceProfile"},
         "SecurityGroups" : [ {"Ref" : "WebServerSecurityGroup"} ],
