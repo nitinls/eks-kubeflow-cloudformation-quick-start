@@ -111,10 +111,6 @@ You can open KubeFlow dashboard by selecting Preview --> Preview running applica
 
 1) eksctl delete cluster
 2) Delete IAM OIDC
-3) Delete IAM Role (eksworkshopv10)
-4) Delete ALB
-5) Delete ALB Target Group.
-6) Delete the EC2 Key pair
-7) Delete/Disable the AWS KMS Custom Key (optional)
-8) Delete the Cloudformations (if there are errors)
-9) Delete the main Cloudformation which stood up VM.
+3) Delete IAM Roles.
+4) Delete/Disable the AWS KMS Custom Key (optional)
+5) Delete the Cloudformation templates . There will be total three templates ( 2 from eksctl and 1 which you created at the beginning of the lab).
