@@ -45,6 +45,58 @@ Wait for the installation to complete (should take approx 20-25 minutes). You wi
 
 3) Connect to the Linux Jump Box from Cloud9 for accessing Kubeflow dashboard.
 
+Open Cloud9 Console and create a new environment.
+
+![Create-Cloud-9](/images/Create-Cloud-9.png)
+
+Give Name and Description-
+
+![Cloud9-Screenshot2](/images/Cloud9-Screenshot2.png)
+
+In next screen choose, "Connect and run in remote server" and Enter Public DNS of the Linux Jump Server and Port as 22.
+
+![Cloud9-Details.png](/images/Cloud9-Details.png)
+
+Before moving to next screen, we need to copy the Cloud9 public SSH key into our Linux jump server. Click on "Copy Key to Clipboard"
+and go SSH console of Linux Jump Server and update the file at /home/ec2-user/.ssh/authorized_keys.
+
+![LinuxServer1](/images/LinuxServer1.png)
+
+![LinuxServer2](/images/LinuxServer2.png)
+
+![LinuxServer3](/images/LinuxServer3.png)
+
+Once the SSH key is copied to authorized_keys file, go back to the Cloud9 screen and complete creating the environment.
+
+![Cloud9-Screenshot4](/images/Cloud9-Screenshot4.png)
+
+You should see Cloud9 console in a few moments.
+
+![Cloud9-1](/images/Cloud9-1.png)
+
+From Cloud9 console, we can run eksctl and kubectl commands and also open Kubeflow dashboard.
+
+![Cloud9-2](/images/Cloud9-2.png)
+
+![Cloud9-3](/images/Cloud9-3.png)
+
+![Cloud9-4](/images/Cloud9-4.png)
+
+![Cloud9-5](/images/Cloud9-5.png)
+
+![Cloud9-6](/images/Cloud9-6.png)
+
+![Cloud9-7](/images/Cloud9-7.png)
+
+![Cloud9-8](/images/Cloud9-8.png)
+
+![Cloud9-9](/images/Cloud9-9.png)
+
+![Cloud9-10](/images/Cloud9-10.png)
+
+
+
+
 # Deletion/Roll-Back steps-
 
 1) eksctl delete cluster
