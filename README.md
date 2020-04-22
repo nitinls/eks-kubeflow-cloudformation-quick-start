@@ -55,7 +55,7 @@ Give Name and Description-
 
 In next screen choose, "Connect and run in remote server" and Enter Public DNS of the Linux Jump Server and Port as 22.
 
-![Cloud9-Details.png](/images/Cloud9-Details.png)
+![Cloud9-Screenshot3](/images/Cloud9-Screenshot3.png)
 
 Before moving to next screen, we need to copy the Cloud9 public SSH key into our Linux jump server. Click on "Copy Key to Clipboard"
 and go SSH console of Linux Jump Server and update the file at /home/ec2-user/.ssh/authorized_keys.
@@ -93,7 +93,6 @@ From Cloud9 console, we can run eksctl and kubectl commands and also open Kubefl
 ![Cloud9-9](/images/Cloud9-9.png)
 
 ![Cloud9-10](/images/Cloud9-10.png)
-
 
 
 
