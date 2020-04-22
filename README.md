@@ -10,7 +10,7 @@ For people who wish to start using KubeFlow and Sagemaker operators for Kubernet
 
 aws cloudformation create-stack --stack-name myteststack --template-body file://cfv1.json --capabilities CAPABILITY_IAM
 
-You can also use AWS Console to run the Cloudformation template.
+You can also run the Cloudformation from AWS Console.
 
 2) The cfv1 will run for about 30 minutes and will setup
         a) A Linux Jump Box with eksctl and kubectl
@@ -18,6 +18,30 @@ You can also use AWS Console to run the Cloudformation template.
         c) install Cloud9 components
 
 You can watch the installation process by logging into the Linux Jump Server (using EC2 instance connect) and tailing the log file at /var/log/cloud-init-output.log.
+
+Go to Cloudformation service in AWS Console and check the stack which you just created-
+
+![Image2](/images/Image2.png)
+
+Go to resources tab in the CF-
+
+![Image3](/images/Image3.png)
+
+Select the WebServerInstance to go to the Linux Jump Box in EC2 console.
+
+![Image4](/images/Image4.png)
+
+Hit Connect with EC2 Instance Connect. This will open SSH shell in browser. If you are not able to open EC2 instance connect for some reason you can also choose Session Manager. We are showing screenshots from EC2 instance connect.
+
+![Image5](/images/Image5.png)
+
+Once connected to the Jump Box you can watch the installation of EKS, KubeFlow, Sagemaker operators and Cloud9 at /var/log/cloud-init-output.log
+
+![tail-cloud-init](/images/tail-cloud-init.png)
+
+Wait for the installation to complete (should take approx 20-25 minutes). You will see below message at the end of bootstrapping.
+
+![Cloud-Init-Finish](/images/Cloud-Init-Finish.png)
 
 3) Connect to the Linux Jump Box from Cloud9 for accessing Kubeflow dashboard.
 
