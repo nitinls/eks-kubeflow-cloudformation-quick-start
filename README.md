@@ -14,7 +14,7 @@ aws cloudformation create-stack --stack-name myteststack --template-body file://
 
 You can also run the Cloudformation from AWS Console.
 
-2) The cfv1 will run for about 30 minutes and will setup
+2) The Cloudformation will run for about 20-25 minutes and will setup
         a) A Linux Jump Box with eksctl and kubectl
         b) EKS, KubeFlow and Sagemaker operators for k8s.
         c) install Cloud9 components
