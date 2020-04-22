@@ -10,6 +10,8 @@ For people who wish to start using KubeFlow and Sagemaker operators for Kubernet
 
 aws cloudformation create-stack --stack-name myteststack --template-body file://cfv1.json --capabilities CAPABILITY_IAM
 
+![ScreenShot1](/images/ScreenShot1.png)
+
 You can also run the Cloudformation from AWS Console.
 
 2) The cfv1 will run for about 30 minutes and will setup
