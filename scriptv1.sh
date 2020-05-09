@@ -20,10 +20,6 @@ sudo chmod +x /usr/local/bin/aws-iam-authenticator
 . /etc/profile.d/bash_completion.sh
 . ~/.bash_completion
 
-#git clone https://github.com/brentley/ecsdemo-frontend.git
-#git clone https://github.com/brentley/ecsdemo-nodejs.git
-#git clone https://github.com/brentley/ecsdemo-crystal.git
-
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 
 sudo mv -v /tmp/eksctl /usr/local/bin
