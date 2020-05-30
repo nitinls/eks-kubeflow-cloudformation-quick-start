@@ -86,7 +86,7 @@
          } ]
       },
       "Roles": [ {
-         "Ref": "RootRole"
+         "Ref": "eks-admin-role"
       } ]
     }
     },
@@ -96,7 +96,7 @@
     "Properties": {
       "Path": "/",
       "Roles": [ {
-         "Ref": "RootRole"
+         "Ref": "eks-admin-role"
       } ]
        }
      },
