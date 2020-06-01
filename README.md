@@ -72,8 +72,6 @@ and go SSH console of Linux Jump Server and update the file at /home/ec2-user/.s
 
 Once the SSH key is copied to authorized_keys file, go back to the Cloud9 screen and complete creating the environment.
 
-![Cloud9-Screenshot4](/images/Cloud9-Screenshot4.png)
-
 You should see Cloud9 console in a few moments.
 
 ![Cloud9-1](/images/Cloud9-1.png)
