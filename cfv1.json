@@ -1,4 +1,4 @@
-{
+w{
   "AWSTemplateFormatVersion" : "2010-09-09",
 
   "Description" : "AWS CloudFormation Sample Template for Installing EKS, KubeFlow and Sagemaker Operators",
@@ -86,7 +86,7 @@
          } ]
       },
       "Roles": [ {
-         "Ref": "eks-admin-role"
+         "Ref": "RootRole"
       } ]
     }
     },
@@ -96,7 +96,7 @@
     "Properties": {
       "Path": "/",
       "Roles": [ {
-         "Ref": "eks-admin-role"
+         "Ref": "RootRole"
       } ]
        }
      },
