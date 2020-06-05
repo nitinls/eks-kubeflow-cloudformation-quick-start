@@ -41,6 +41,10 @@ export MASTER_ARN=$(aws kms describe-key --key-id alias/${AWS_CLUSTER_NAME} --qu
 
 echo "export MASTER_ARN=${MASTER_ARN}" | tee -a ~/.bash_profile
 
+echo "export AWS_CLUSTER_NAME=${AWS_CLUSTER_NAME}" | tee -a ~/.bash_profile
+
+echo "export AWS_REGION=${AWS_REGION}" | tee -a ~/.bash_profile
+
 cat << EOF > ${AWS_CLUSTER_NAME}.yaml
 ---
 apiVersion: eksctl.io/v1alpha5

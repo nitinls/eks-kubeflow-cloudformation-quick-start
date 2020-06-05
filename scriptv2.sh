@@ -4,7 +4,6 @@
 #export AWS_CLUSTER_NAME=eksworkshop-eksctlv35
 #export AWS_REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r '.region')
 
-
 kubectl get nodes # if we see our 3 nodes, we know we have authenticated correctly
 
 STACK_NAME=$(eksctl get nodegroup --cluster ${AWS_CLUSTER_NAME} -o json | jq -r '.[].StackName')
@@ -18,7 +17,7 @@ curl --silent --location "https://github.com/kubeflow/kfctl/releases/download/v1
 sudo cp -v /tmp/kfctl /usr/local/bin
 
 cat << EoF > kf-install.sh
-export AWS_CLUSTER_NAME=eksworkshop-eksctlv35
+export AWS_CLUSTER_NAME=\${AWS_CLUSTER_NAME}
 export KF_NAME=\${AWS_CLUSTER_NAME}
 
 export BASE_DIR=/home/ec2-user/environment
