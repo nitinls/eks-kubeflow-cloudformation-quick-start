@@ -1,6 +1,8 @@
 #!/bin/bash
 # Install Sagemaker Operators on EKS
 
+source ~/.bash_profile
+
 #Upgrade AWSCLI
 sudo yum install python3 pip3 -y
 sudo pip3 install --upgrade awscli
