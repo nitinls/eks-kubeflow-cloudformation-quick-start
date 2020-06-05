@@ -6,7 +6,9 @@ sudo yum -y install jq gettext bash-completion ec2-instance-connect
 
 export AWS_REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r '.region')
 
-export AWS_CLUSTER_NAME=eksworkshop-eksctlv35
+CLUSTER_RAND=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13 ; echo '')
+
+export AWS_CLUSTER_NAME=eksworkshop-$CLUSTER_RAND
 
 aws configure set default.region ${AWS_REGION}
 #aws configure set aws_output json
