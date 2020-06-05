@@ -5,7 +5,7 @@
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
 source ~/.nvm/nvm.sh
 source ~/.bashrc
-source ~/.bash_profile
+#source ~/.bash_profile
 nvm install node
 
 #Install Node.JS for ec2-user

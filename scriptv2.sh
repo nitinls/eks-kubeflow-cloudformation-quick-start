@@ -5,6 +5,9 @@
 #export AWS_REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r '.region')
 source ~/.bash_profile
 
+echo "eks cluster name is $AWS_CLUSTER_NAME"
+echo "aws region is $AWS_REGION"
+
 kubectl get nodes # if we see our 3 nodes, we know we have authenticated correctly
 
 STACK_NAME=$(eksctl get nodegroup --cluster ${AWS_CLUSTER_NAME} -o json | jq -r '.[].StackName')
