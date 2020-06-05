@@ -1,8 +1,6 @@
 #!/bin/bash
 #Install KubeFlow on EKS
 
-#export AWS_CLUSTER_NAME=eksworkshop-eksctlv35
-#export AWS_REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r '.region')
 source ~/.bash_profile
 
 echo "eks cluster name is $AWS_CLUSTER_NAME"

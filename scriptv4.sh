@@ -5,7 +5,6 @@
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
 source ~/.nvm/nvm.sh
 source ~/.bashrc
-#source ~/.bash_profile
 nvm install node
 
 #Install Node.JS for ec2-user
@@ -18,9 +17,6 @@ nvm install node
 sudo yum -y groupinstall "Development Tools"
 
 # Install Cloud9 with Ec2-user
-
-#curl -L https://raw.githubusercontent.com/c9/install/master/install.sh | bash
-#wget -O - https://raw.githubusercontent.com/c9/install/master/install.sh | bash
 
 /bin/su -c "curl -L https://raw.githubusercontent.com/c9/install/master/install.sh | bash" - ec2-user
 /bin/su -c "wget -O - https://raw.githubusercontent.com/c9/install/master/install.sh | bash" - ec2-user
