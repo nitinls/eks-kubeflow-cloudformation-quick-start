@@ -3,6 +3,7 @@
 
 #export AWS_CLUSTER_NAME=eksworkshop-eksctlv35
 #export AWS_REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r '.region')
+source ~/.bash_profile
 
 kubectl get nodes # if we see our 3 nodes, we know we have authenticated correctly
 
